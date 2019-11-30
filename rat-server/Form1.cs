@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace rat_server
 {
@@ -20,8 +22,10 @@ namespace rat_server
 
         public static void ExecuteServer()
         {
-            ipAddr = //fill this in 
-            port_num = //fill this in 
+            int port_num = 5000;
+            IPAddress ipAddr = ipHost.AddressList[0];
+            IpEndPoint localEndPoint = new IpEndPoint(ipAddr, port_num);
+
 
             // Creation TCP/IP Socket using  
             // Socket Class Costructor 
@@ -84,8 +88,12 @@ namespace rat_server
                     sock.Close();
                 }
             }
-        }
+            catch (Exception e)
+            {
+                Console.WriteLine("problem");
 
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
