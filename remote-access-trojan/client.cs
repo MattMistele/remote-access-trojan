@@ -20,8 +20,9 @@ namespace Client
                 int port_num = 5000;
                 // Establish the remote endpoint  
                 // for the socket. 
+                IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress ipAddr = ipHost.AddressList[0];
-                IpEndPoint localEndPoint = new IpEndPoint(ipAddr, port_num);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddr, port_num);
 
                 // Creation TCP/IP Socket using  
                 // Socket Class Costructor 
@@ -33,7 +34,7 @@ namespace Client
 
                 // We print EndPoint information  
                 // that we are connected 
-                byte[] message = ("HI PLEASE WORK");
+                byte[] message = Encoding.UTF8.GetBytes("HI PLEASE WORK");
                 sock.Send(message);
                 
                 //int byteRecv = sock.Receive(messageReceived);

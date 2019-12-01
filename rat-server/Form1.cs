@@ -23,8 +23,9 @@ namespace rat_server
         public static void ExecuteServer()
         {
             int port_num = 5000;
+            IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
             IPAddress ipAddr = ipHost.AddressList[0];
-            IpEndPoint localEndPoint = new IpEndPoint(ipAddr, port_num);
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddr, port_num);
 
 
             // Creation TCP/IP Socket using  
@@ -39,12 +40,12 @@ namespace rat_server
                 // All client that will connect to this  
                 // Server Socket must know this network 
                 // Address 
-                listener.sock(localEndPoint);
+                sock.Bind(localEndPoint);
 
                 // Using Listen() method we create  
                 // the Client list that will want 
                 // to connect to Server 
-                listener.sock(10);
+                sock.Listen(10);
 
                 while (true)
                 {
