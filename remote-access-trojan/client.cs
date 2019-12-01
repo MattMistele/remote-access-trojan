@@ -4,16 +4,11 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Client
+namespace remote_access_trojan
 {
-    class Program
+    class Client
     {
-        static void Main(string[] args)
-        {
-            RunClient();
-        }
-
-        static void RunClient()
+        public static void ExecuteClient()
         {
             try
             {
@@ -36,20 +31,25 @@ namespace Client
                 // that we are connected 
                 byte[] message = Encoding.UTF8.GetBytes("HI PLEASE WORK");
                 sock.Send(message);
-                
+
                 //int byteRecv = sock.Receive(messageReceived);
                 //Console.WriteLine("Message from Server -> {0}", Enoding.ASCII.GetString(messageReceived, 0, byteRecv));
 
                 // Close Socket
                 sock.Shutdown(SocketShutdown.Both);
                 sock.Close();
-                }
+            }
             catch (Exception e)
             {
                 Console.WriteLine("problem");
-
             }
         }
-        }
+    }
 }
+
+
+            
+        
+     
+
 
