@@ -45,7 +45,7 @@ namespace rat_server
                 // Using Listen() method we create  
                 // the Client list that will want 
                 // to connect to Server 
-                sock.isten(10);
+                sock.listen(10);
 
                 while (true)
                 {
