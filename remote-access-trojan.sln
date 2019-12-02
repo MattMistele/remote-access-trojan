@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "remote-access-trojan", "remote-access-trojan\remote-access-trojan.csproj", "{67A9B260-B957-40CC-A654-850CFAE65476}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Space Invaders", "Space Invaders\Space Invaders.vbproj", "{CA90A772-0F2D-4848-931C-E981DA4623CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rat-server", "rat-server\rat-server.csproj", "{B610F972-092D-4870-8B16-0130EE14BFC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{67A9B260-B957-40CC-A654-850CFAE65476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A9B260-B957-40CC-A654-850CFAE65476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67A9B260-B957-40CC-A654-850CFAE65476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA90A772-0F2D-4848-931C-E981DA4623CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA90A772-0F2D-4848-931C-E981DA4623CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA90A772-0F2D-4848-931C-E981DA4623CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA90A772-0F2D-4848-931C-E981DA4623CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B610F972-092D-4870-8B16-0130EE14BFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B610F972-092D-4870-8B16-0130EE14BFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B610F972-092D-4870-8B16-0130EE14BFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B610F972-092D-4870-8B16-0130EE14BFC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

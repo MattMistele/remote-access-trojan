@@ -1,0 +1,8 @@
+    Private Function CountSeconds(ByVal lastTime As Integer, ByVal seconds As Integer) As Boolean
+        Dim time As Integer = My.Computer.Clock.TickCount()
+        If time > lastTime + seconds * 1000 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
