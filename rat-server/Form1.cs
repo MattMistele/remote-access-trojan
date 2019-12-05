@@ -282,7 +282,7 @@ namespace rat_server
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //  ExecuteServer();
+            ExampleServer();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -302,7 +302,7 @@ namespace rat_server
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ExampleServer();
+            
         }
     }
 }
