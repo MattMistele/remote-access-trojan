@@ -61,10 +61,17 @@ namespace rat_server
                     // Accept() method the server  
                     // will accept connection of client 
                     Socket clientSocket = listener.Accept();
+                    var output = File.Create("test.zip");
+                    int c = 0;
+                    byte[] buffer = new byte[2048];
+                    clientSocket.Receive(buffer);
+                    while (clientSocket.Receive(buffer) > 0) {
+                        output.Write(buffer, 0, c);    
+                    }
 
                     // Data buffer 
 
-                    string data = null;
+                    //string data = null;
 
 
                     /*   using (var output = File.Create("test.zip"))
@@ -83,19 +90,6 @@ namespace rat_server
                            output.Write(buffer, 0, bytesRead);
                            Console.WriteLine("stuff happening5");
                        }
-                       } */
-
-                    
-                    int c = 0;
-                    byte[] bytes = new byte [2048];
-                    clientSocket.Receive(byte);
-
-
-
-
-
-
-
                     /*
                     Console.WriteLine("stuff happening1");
                     File.Create("test.zip");
@@ -124,14 +118,14 @@ namespace rat_server
 
                     //stream.Close();
 
-                    Console.WriteLine("Text received -> {0} ", data);
-                    byte[] message = Encoding.ASCII.GetBytes("Test Server");
+                   // Console.WriteLine("Text received -> {0} ", data);
+                    //byte[] message = Encoding.ASCII.GetBytes("Test Server");
 
                   //  File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.zip"), bytes);
 
                     // Send a message to Client  
                     // using Send() method 
-                    clientSocket.Send(message);
+                   // clientSocket.Send(message);
 
                     // Close client Socket using the 
                     // Close() method. After closing, 
