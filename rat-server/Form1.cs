@@ -85,14 +85,26 @@ namespace rat_server
                        }
                        } */
 
-                    byte[] bytes = new byte [1024];
+                    
+                    int c = 0;
+                    byte[] bytes = new byte [2048];
+                    clientSocket.Receive(byte);
+
+
+
+
+
+
+
+                    /*
+                    Console.WriteLine("stuff happening1");
                     File.Create("test.zip");
+                    Console.WriteLine("stuff happening2");
                     clientSocket.Receive(bytes);
+                    Console.WriteLine("stuff happening3");
                     File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"), bytes);
-
                     Console.WriteLine("File Received");
-
-
+                    */
 
                     //File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"), bytes);
                     //File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.png"), bytes);
