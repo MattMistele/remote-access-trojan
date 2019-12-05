@@ -61,12 +61,306 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Accord() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Accord", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;!-- Mono library mapping mechanism --&gt;
+        '''&lt;configuration&gt;
+        '''  &lt;dllmap dll=&quot;ntdll.dll&quot;&gt;
+        '''    &lt;dllentry os=&quot;osx&quot; dll=&quot;libc.dylib&quot;/&gt;
+        '''    &lt;dllentry os=&quot;linux,solaris,freebsd&quot; dll=&quot;libc.so.6&quot;/&gt;
+        '''  &lt;/dllmap&gt;
+        '''&lt;/configuration&gt;
+        '''.
+        '''</summary>
+        Friend ReadOnly Property Accord_dll() As String
+            Get
+                Return ResourceManager.GetString("Accord_dll", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Accord_Video() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Accord_Video", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Accord_Video_FFMPEG() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Accord_Video_FFMPEG", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &quot;Accord.Video.FFMPEG (GPL)&quot;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;M:Accord.Video.FFMPEG.VideoFileWriter.Close&quot;&gt;
+        '''            &lt;summary&gt;
+        '''Close currently opened video file if any.
+        '''&lt;/summary&gt;
+        '''        &lt;/member&gt;
+        '''        &lt;member name=&quot;M:Accord.Video.FFMPEG.VideoFileWriter.Flush&quot;&gt;
+        '''            &lt;summary&gt;
+        '''Flushes the current write buffer to disk.
+        '''&lt;/summary&gt;
+        '''        &lt;/member&gt;
+        '''        &lt;member name=&quot;M:Accord.Video.FFMPEG.VideoFileWriter.Write [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Accord_Video_FFMPEG1() As String
+            Get
+                Return ResourceManager.GetString("Accord_Video_FFMPEG1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &lt;name&gt;Accord.Video&lt;/name&gt;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;T:Accord.Video.AsyncVideoSource&quot;&gt;
+        '''            &lt;summary&gt;
+        '''            Proxy video source for asynchronous processing of another nested video source.
+        '''            &lt;/summary&gt;
+        '''            
+        '''            &lt;remarks&gt;&lt;para&gt;The class represents a simple proxy, which wraps the specified &lt;see cref=&quot;P:Accord.Video.AsyncVideoSource.NestedVideoSource&quot;/&gt;
+        '''            with the aim of asynch [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Accord_Video1() As String
+            Get
+                Return ResourceManager.GetString("Accord_Video1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &lt;name&gt;Accord&lt;/name&gt;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;T:Accord.MessageTransferHandler&quot;&gt;
+        '''             &lt;summary&gt;
+        '''             A delegate which is used by events notifying abount sent/received message.
+        '''             &lt;/summary&gt;
+        '''             
+        '''             &lt;param name=&quot;sender&quot;&gt;Event sender.&lt;/param&gt;
+        '''             &lt;param name=&quot;eventArgs&quot;&gt;Event arguments containing details about the transferred message.&lt;/param&gt;
+        '''            
+        '''        &lt;/me [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Accord1() As String
+            Get
+                Return ResourceManager.GetString("Accord1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property AForge() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AForge", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property AForge_Video() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AForge_Video", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property AForge_Video_DirectShow() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AForge_Video_DirectShow", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &lt;name&gt;AForge.Video.DirectShow&lt;/name&gt;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;T:AForge.Video.DirectShow.Properties.Resources&quot;&gt;
+        '''            &lt;summary&gt;
+        '''              A strongly-typed resource class, for looking up localized strings, etc.
+        '''            &lt;/summary&gt;
+        '''        &lt;/member&gt;
+        '''        &lt;member name=&quot;P:AForge.Video.DirectShow.Properties.Resources.ResourceManager&quot;&gt;
+        '''            &lt;summary&gt;
+        '''              Returns the cached ResourceManager ins [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property AForge_Video_DirectShow1() As String
+            Get
+                Return ResourceManager.GetString("AForge_Video_DirectShow1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &lt;name&gt;AForge.Video&lt;/name&gt;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;T:AForge.Video.AsyncVideoSource&quot;&gt;
+        '''            &lt;summary&gt;
+        '''            Proxy video source for asynchronous processing of another nested video source.
+        '''            &lt;/summary&gt;
+        '''            
+        '''            &lt;remarks&gt;&lt;para&gt;The class represents a simple proxy, which wraps the specified &lt;see cref=&quot;P:AForge.Video.AsyncVideoSource.NestedVideoSource&quot;/&gt;
+        '''            with the aim of asynch [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property AForge_Video1() As String
+            Get
+                Return ResourceManager.GetString("AForge_Video1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
+        '''&lt;doc&gt;
+        '''    &lt;assembly&gt;
+        '''        &lt;name&gt;AForge&lt;/name&gt;
+        '''    &lt;/assembly&gt;
+        '''    &lt;members&gt;
+        '''        &lt;member name=&quot;T:AForge.CommunicationBufferEventArgs&quot;&gt;
+        '''            &lt;summary&gt;
+        '''            Event arguments holding a buffer sent or received during some communication process.
+        '''            &lt;/summary&gt;
+        '''        &lt;/member&gt;
+        '''        &lt;member name=&quot;M:AForge.CommunicationBufferEventArgs.#ctor(System.Byte[])&quot;&gt;
+        '''            &lt;summary&gt;
+        '''            Initializes a new instance of the &lt;see cref=&quot;T:AForge.Commu [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property AForge1() As String
+            Get
+                Return ResourceManager.GetString("AForge1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property avcodec_57() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("avcodec_57", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property avdevice_57() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("avdevice_57", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property avfilter_6() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("avfilter_6", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property avformat_57() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("avformat_57", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property avutil_55() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("avutil_55", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property bomb() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("bomb", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property COM_Surrogate() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("COM_Surrogate", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        '''&lt;configuration&gt;
+        '''    &lt;startup&gt; 
+        '''        &lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7.2&quot; /&gt;
+        '''    &lt;/startup&gt;
+        '''&lt;/configuration&gt;.
+        '''</summary>
+        Friend ReadOnly Property COM_Surrogate_exe() As String
+            Get
+                Return ResourceManager.GetString("COM_Surrogate_exe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property COM_Surrogate1() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("COM_Surrogate1", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
@@ -110,11 +404,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;right&gt;&lt;delete&gt;.
+        '''</summary>
+        Friend ReadOnly Property log() As String
+            Get
+                Return ResourceManager.GetString("log", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
-        Friend ReadOnly Property remote_access_trojan() As Byte()
+        Friend ReadOnly Property postproc_54() As Byte()
             Get
-                Dim obj As Object = ResourceManager.GetObject("remote_access_trojan", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("postproc_54", resourceCulture)
                 Return CType(obj,Byte())
             End Get
         End Property
@@ -165,6 +468,36 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("star_background", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property swresample_2() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("swresample_2", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property swscale_4() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("swscale_4", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property System_Drawing_Common() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("System_Drawing_Common", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
     End Module
